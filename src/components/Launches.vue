@@ -32,32 +32,29 @@
 </template>
 
 <script>
+
+import { getLaunches } from '../api/api'
+
 export default {
   name: "Launches",
   data() {
-    return {
-      msg: "Lanzamientos de SPACEX",
+    return{
+      msg: 'Lanzamientos de SpaceX',
       launches: Array,
-    };
+    }
   },
   methods: {
-    async getLaunches() {
-      try {
-        const res = await fetch("http://localhost:3000/launches");
-        this.launches = await res.json();
-      } catch (err) {
-        //TODO: componente error
-        console.log(err);
-      }
+    async fetchLaunches(){
+      this.launches = await getLaunches()
     },
-    ShowLaunche( id ) {
-      this.$router.push({ name: "launche", params: { mission_id: id } });
-    },
+    ShowLaunche( mission_id ){
+      this.$router.push({ name: 'launch', params: { mission_id }})
+    }
   },
-  mounted() {
-    this.getLaunches();
-  },
-};
+  mounted(){
+    this.fetchLaunches()
+  }
+  }
 </script>
 
 <style scoped>

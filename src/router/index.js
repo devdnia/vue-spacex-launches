@@ -14,9 +14,9 @@ import HomePage from '../pages/HomePage';
      component: () => import(/* webpackChunkName: "Launches" */ '../components/Launches')
  },
  {
-    path:'/launche/:mission_id',
-    name: 'launche',
-    component: () => import(/* webpackChunkName: "Launche id" */ '../components/Launche')
+    path:'/launch/:mission_id',
+    name: 'launch',
+    component: () => import(/* webpackChunkName: "Launch id" */ '../components/Launch')
 
  },
  {

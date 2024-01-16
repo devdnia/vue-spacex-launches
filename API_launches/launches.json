@@ -5,7 +5,7 @@
             "flight_number": 1,
             "mission_name": "FalconSat",
             "launch_year": "2006",
-            "is_tentative": false,
+            "launch_result": "Burst",
             "mission_patch_small": "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png"
         },
         {
@@ -13,7 +13,7 @@
             "flight_number": 2,
             "mission_name": "DemoSat",
             "launch_year": "2007",
-            "is_tentative": false,
+            "launch_result": "Burst",
             "mission_patch_small": "https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png"
         },
         {
@@ -21,7 +21,7 @@
             "flight_number": 3,
             "mission_name": "Trailblazer",
             "launch_year": "2008",
-            "is_tentative": false,
+            "launch_result": "Burst",
             "mission_patch_small": "https://images2.imgbox.com/3d/86/cnu0pan8_o.png"
         },
         {
@@ -29,7 +29,7 @@
             "flight_number": 4,
             "mission_name": "RatSat",
             "launch_year": "2008",
-            "is_tentative": false,
+            "launch_result": "Burst",
             "mission_patch_small": "https://images2.imgbox.com/e9/c9/T8CfiSYb_o.png"
         },
         {
@@ -37,7 +37,7 @@
             "flight_number": 5,
             "mission_name": "RazakSat",
             "launch_year": "2009",
-            "is_tentative": false,
+            "launch_result": "Burst",
             "mission_patch_small": "https://images2.imgbox.com/a7/ba/NBZSw3Ho_o.png"
         },
         {
@@ -45,7 +45,7 @@
             "flight_number": 6,
             "mission_name": "Falcon 9 Test Flight",
             "launch_year": "2010",
-            "is_tentative": true,
+            "launch_result": "Succes",
             "mission_patch_small": "https://images2.imgbox.com/5c/36/gbDKf6Y7_o.png"
 
         }
