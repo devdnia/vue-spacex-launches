@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
+    <title-launch msg="LANZAMIENTOS DE SPACEX" />
   </div>
   <div class="container">
     <br />
-    <table class="table table-striped">
+    <table class="table table-striped mb-5">
       <thead>
         <tr>
           <th>NÚMERO MISIÓN</th>
@@ -17,7 +17,7 @@
         <tr
           v-for="launche in launches"
           :key="launche.mission_id"
-          @click="ShowLaunche(launche.mission_id)"
+          @click="showLaunche(launche.id)"
         >
           <td>{{ launche.mission_id }}</td>
           <td>{{ launche.mission_name }}</td>
@@ -28,18 +28,21 @@
         </tr>
       </tbody>
     </table>
+    <!-- <button class="btn btn-success fw-bold" @click="createLaunch">CREAR LANZAMIENTO</button> -->
+    <router-link to="/newlaunch" class="btn btn-success fw-bold">CREAR LANZAMIENTO</router-link>
   </div>
 </template>
 
 <script>
 
 import { getLaunches } from '../api/api'
+import TitleLaunch from './TitleLaunch.vue'
 
 export default {
+  components: { TitleLaunch },
   name: "Launches",
   data() {
     return{
-      msg: 'Lanzamientos de SpaceX',
       launches: Array,
     }
   },
@@ -47,8 +50,11 @@ export default {
     async fetchLaunches(){
       this.launches = await getLaunches()
     },
-    ShowLaunche( mission_id ){
-      this.$router.push({ name: 'launch', params: { mission_id }})
+    showLaunche( id ){
+      this.$router.push({ name: 'launch', params: { id }})
+    },
+    createLaunch() {
+      console.log("Create");
     }
   },
   mounted(){

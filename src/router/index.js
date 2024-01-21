@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage';
 
 
+
  const routes = [
  {
      path: '/',
@@ -14,10 +15,20 @@ import HomePage from '../pages/HomePage';
      component: () => import(/* webpackChunkName: "Launches" */ '../components/Launches')
  },
  {
-    path:'/launch/:mission_id',
+    path:'/launch/:id',
     name: 'launch',
     component: () => import(/* webpackChunkName: "Launch id" */ '../components/Launch')
 
+ },
+ {
+   path:'/newlaunch',
+   name: 'createlaunch',
+   component: () => import(/* webpackChunkName: "Create Launch" */ '../components/CreateLaunch')
+ },
+ {
+   path:'/formlaunch/:id',
+   name: 'formlaunch',
+   component: () => import(/* webpackChunkName: "Form Launch" */ '../components/FormLaunch')
  },
  {
     path: '/:pathMatch(.*)*',

@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="/">Inicio</router-link>
-    <span> 🌎 </span>
-    <router-link to="/launches">Lanzamientos</router-link>
+    <router-link to="/">🏠  INICIO</router-link>
+    <span> | </span>
+    <router-link to="/launches">🚀  LANZAMIENTOS</router-link>
   </nav>
   <hr />
 </template>
