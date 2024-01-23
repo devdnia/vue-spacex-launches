@@ -24,7 +24,7 @@
           type="text"
           class="form-control"
           placeholder="Nombre de la misión"
-          :value="launch.mission_name"
+          v-model="launch.mission_name"
         />
       </div>
 
@@ -36,7 +36,7 @@
           type="text"
           class="form-control"
           placeholder="Año de lanzamiento"
-          :value="launch.launch_year"
+          v-model="launch.launch_year"
         />
       </div>
 
@@ -48,7 +48,7 @@
           type="text"
           class="form-control"
           placeholder="Url de la imagen"
-          :value="launch.mission_patch_small"
+          v-model="launch.mission_patch_small"
         />
       </div>
       <!-- Botones de formulario -->
@@ -159,8 +159,7 @@ export default {
     //Formulario
     async saveChangesLaunch() {
       try {
-        const updatedLaunch = await updateLaunch(this.launch.id, this.launch);
-        console.log("Lanzamiento actualizado:", updatedLaunch);
+        await updateLaunch(this.launch.id, this.launch);
         Swal.fire("!Lanzamiento actualizado 🚀 !");
         this.goHome();
       } catch (error) {
