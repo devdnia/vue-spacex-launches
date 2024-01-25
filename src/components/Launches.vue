@@ -29,7 +29,7 @@
       </tbody>
     </table>
     <!-- <button class="btn btn-success fw-bold" @click="createLaunch">CREAR LANZAMIENTO</button> -->
-    <router-link to="/newlaunch" class="btn btn-success fw-bold">CREAR LANZAMIENTO</router-link>
+    <router-link to="/yupform" class="btn btn-success fw-bold">CREAR LANZAMIENTO</router-link>
   </div>
 </template>
 

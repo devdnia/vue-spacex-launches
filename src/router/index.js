@@ -31,6 +31,11 @@ import HomePage from '../pages/HomePage';
    component: () => import(/* webpackChunkName: "Form Launch" */ '../components/FormLaunch')
  },
  {
+  path:'/yupform',
+  name: 'yupform',
+  component: () => import(/* webpackChunkName: "Form Yup" */ '../components/YupForm')
+},
+ {
     path: '/:pathMatch(.*)*',
     component: () => import(/* webpackChunkName: "NoPageFound"*/'../components/404')
  }
