@@ -10,6 +10,11 @@ import HomePage from '../pages/HomePage';
      component: HomePage
  },
  {
+  path: '/login',
+     name: 'login',
+     component: () => import(/* webpackChunkName: "Login" */ '../pages/LoginPage')
+ },
+ {
      path: '/launches',
      name: 'launches',
      component: () => import(/* webpackChunkName: "Launches" */ '../components/Launches')
