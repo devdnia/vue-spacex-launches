@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage';
+import { authMiddleware } from '@/middleware/auth';
 
 
 
@@ -17,7 +18,8 @@ import HomePage from '../pages/HomePage';
  {
      path: '/launches',
      name: 'launches',
-     component: () => import(/* webpackChunkName: "Launches" */ '../components/Launches')
+     component: () => import(/* webpackChunkName: "Launches" */ '../components/Launches'),
+     beforeEnter: authMiddleware,
  },
  {
     path:'/launch/:id',

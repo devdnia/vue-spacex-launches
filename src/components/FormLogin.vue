@@ -54,6 +54,7 @@ import { Form, Field } from "vee-validate";
 import * as Yup from "yup";
 
 import TitleLaunch from "./TitleLaunch.vue";
+import { authService } from '@/services/auth';
 
 export default {
   components: {
@@ -68,13 +69,22 @@ export default {
         .email("Formato email incorrecto"),
       password: Yup.string().required("La constraseña es obligatoria"),
     });
+    const email = ''
+    const password = ''
     return {
       schema,
+      email,
+      password
     };
   },
   methods:{
-    onSubmit( values ){
-        console.log( values );
+    async onSubmit( values ){
+        try {
+          const token = await authService.login( this.email, this.password )
+          this.$router.push('/launches')
+        } catch (error) {
+          console.log('Error al iniciar sesión: ', error.message );
+        }
     }
   }
 };

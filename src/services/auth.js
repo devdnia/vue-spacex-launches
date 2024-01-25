@@ -1,11 +1,11 @@
 import axios from 'axios';
 //import router from '@/router';
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'http://localhost:3001';
 
 export const authService = {
   login: async (username, password) => {
-    const response = await axios.post(`${API_URL}/login`, { "email": username, "password": password });
+    const response = await axios.post(`${API_URL}/users`, { "email": username, "password": password });
     //await console.log(response.data);
     const token  = await response.data;
     //await console.log(token);
