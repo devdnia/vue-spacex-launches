@@ -1,8 +1,11 @@
 <template>
   <!-- Si hay lanzamiento -->
-  <div class="container w-25" v-if="launch">
-    <title-launch msg="EDITAR MISIÓN" />
-
+  <div class="d-flex justify-content-center align-items-center" v-if="launch">
+    <div class="card m-3 w-50">
+      <h5 class="card-header">
+        <title-launch msg="EDITAR MISIÓN" class="mt-3" />
+      </h5>
+      <div class="card-body d-flex flex-column align-items-center">
     <form @submit.prevent="saveChangesLaunch">
       <!-- Número de misión -->
       <div class="form-group p-2">
@@ -52,10 +55,12 @@
         />
       </div>
       <!-- Botones de formulario -->
-      <button type="submit" class="btn btn-primary mt-3 me-3">Guardar</button>
+      <button type="submit" class="btn btn-success mt-3 me-3">Guardar &nbsp; 🚀</button>
 
-      <button @click="goHome" class="btn btn-secondary mt-3">Salir</button>
+      <button @click="goHome" class="btn btn-secondary mt-3">Salir &nbsp; 😟</button>
     </form>
+      </div>
+    </div>
   </div>
 
   <!-- YUP -->

@@ -30,20 +30,6 @@
       "launch_year": "2009",
       "launch_result": "Burst",
       "mission_patch_small": "https://images2.imgbox.com/a7/ba/NBZSw3Ho_o.png"
-    },
-    {
-      "id": "57b2c1bc-d11e-4d5e-bddf-7f1146fa6bab",
-      "mission_id": "EC53565",
-      "mission_name": "Marte 8",
-      "launch_year": "2024-01-26",
-      "mission_patch_small": "https://placehold.co/600x400?text=NO%20+%20IMAGE"
-    },
-    {
-      "id": "10b39722-bf6f-4322-8ee1-20e74c459c87",
-      "mission_id": "EC53565",
-      "mission_name": "Nombre mision",
-      "launch_year": "2024-01-25",
-      "mission_patch_small": "https://placehold.co/600x400?text=NO%20+%20IMAGE"
     }
   ]
 }
