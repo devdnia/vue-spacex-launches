@@ -2,6 +2,8 @@
   <nav>
     <router-link to="/">🏠  INICIO</router-link>
     <span> | </span>
+    <router-link to="/login">🙍  ACCEDER</router-link>
+    <span> | </span>
     <router-link to="/launches">🚀  LANZAMIENTOS</router-link>
   </nav>
   <hr />
