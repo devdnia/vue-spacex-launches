@@ -39,7 +39,7 @@
             <button type="submit" class="btn btn-success me-3">
               Acceder &nbsp; 🚀
             </button>
-            <button class="btn btn-secondary">
+            <button @click="goRegister" class="btn btn-secondary">
               Registrarse &nbsp; 😟
             </button>
           </div>
@@ -79,14 +79,22 @@ export default {
   },
   methods:{
     async onSubmit( values ){
+
+      this.email = values.email
+      this.password = values.password
+
         try {
-          const token = await authService.login( this.email, this.password )
+          await authService.login( this.email, this.password )
+          console.log( this.email, this.password );
           this.$router.push('/launches')
         } catch (error) {
           console.log('Error al iniciar sesión: ', error.message );
         }
+    },
+    goRegister(){
+      this.$router.push("/register");
     }
-  }
+  },
 };
 </script>
 

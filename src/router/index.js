@@ -11,9 +11,14 @@ import { authMiddleware } from '@/middleware/auth';
      component: HomePage
  },
  {
-  path: '/login',
+     path: '/login',
      name: 'login',
      component: () => import(/* webpackChunkName: "Login" */ '../pages/LoginPage')
+ },
+ {
+    path: '/register',
+    name: 'register',
+    component: () => import(/* webpackChunkName: "Register" */ '../components/FormRegister')
  },
  {
      path: '/launches',

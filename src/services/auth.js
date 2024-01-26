@@ -1,28 +1,21 @@
 import axios from 'axios';
-//import router from '@/router';
 
 const API_URL = 'http://localhost:3001';
 
 export const authService = {
   login: async (username, password) => {
     const response = await axios.post(`${API_URL}/users`, { "email": username, "password": password });
-    //await console.log(response.data);
+    console.log("USUARIO", username, password );
     const token  = await response.data;
-    //await console.log(token);
+    console.log("AUTH token ", token);
     await localStorage.setItem('token', JSON.stringify(token));
     return token;
   },
-  register: async (username, password) => {
-    const response = await axios.post(`${API_URL}/register`, { "email": username, "password": password });
+  register: async ( email, name, lastname, password) => {
+    const response = await axios.post(`${API_URL}/register`, { "email": email, "name": name, "lastname": lastname, "password": password });
     const token  = await response.data;
     await localStorage.setItem('token', JSON.stringify(token));
     return token;
-    /*if (token) {
-      // No hay token, redirigir a la página de inicio de sesión
-      this.$router.push('/login');
-    } else {
-      this.$router.push('/register');
-    }*/
   },
   logout: () => {
     localStorage.removeItem('token');
