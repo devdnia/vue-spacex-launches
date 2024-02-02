@@ -1,4 +1,4 @@
-# SpaceX:rocket:
+# SpaceX :rocket:
 
 ## Lanzar proyecto
 Instalar depencias de node

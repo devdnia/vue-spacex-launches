@@ -17,7 +17,7 @@
 
     <p>
       Puedes acceder a mi GitHub para descargar el código fuente:
-      <a href="#" target="_blank">GitHub
+      <a href="https://github.com/devdnia/vue-spacex-launches" target="_blank">GitHub
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
