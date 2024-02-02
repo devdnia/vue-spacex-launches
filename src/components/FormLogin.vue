@@ -84,8 +84,7 @@ export default {
       this.password = values.password
 
         try {
-          await authService.login( this.email, this.password )
-          console.log( this.email, this.password );
+          await authService.login( { email:this.email, password:this.password })
           this.$router.push('/launches')
         } catch (error) {
           console.log('Error al iniciar sesión: ', error.message );

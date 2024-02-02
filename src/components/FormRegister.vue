@@ -22,16 +22,16 @@
             />
           </div>
 
-          <!-- LASTNAME-->
+          <!-- AVATAR-->
           <div class="form-group">
-            <label>Apellidos</label>
+            <label>Avatar</label>
             <Field
-              name="lastName"
+              name="Avatar"
               type="text"
               class="form-control"
-              :class="{ 'is-invalid': errors.lastName }"
+              :class="{ 'is-invalid': errors.avatar }"
             />
-            <div class="invalid-feedback">{{ errors.lastName }}</div>
+            <div class="invalid-feedback">{{ errors.avatar }}</div>
           </div>
 
           <!-- Email-->
@@ -98,21 +98,21 @@ export default {
   data() {
     const schema = Yup.object().shape({
       name: Yup.string(),
-      lastName: Yup.string(),
+      avatar: Yup.string(),
       email: Yup.string()
         .required("Email es obligatorio")
         .email("Formato email incorrecto"),
-      password: Yup.string().required("La constraseña es obligatoria"),
+      password: Yup.string().min(6, "La contraseña tiene que tener mínimo 6 caracteres").required("La constraseña es obligatoria"),
       passwordConfirm: Yup.string()
         .oneOf([Yup.ref("password"), null], "Contraseña no coincide")
         .required("Confirme la contraseña"),
     });
     const name = null;
-    const lastname = null;
+    const avatar = null;
     const email = null;
     const password = null;
 
-    return { schema, name, lastname, email, password };
+    return { schema, name, avatar, email, password };
   },
   methods: {
     async onSubmit(values) {
@@ -122,18 +122,28 @@ export default {
         this.name = values.name;
       }
 
-      if (values.lastname == null) {
-        this.lastname = "No lastname";
+      if (values.avatar == null) {
+        this.avatar = "https://picsum.photos/800";
       } else {
-        this.lastname = values.lastname;
+        this.avatar = values.avatar;
       }
 
       this.email = values.email;
       this.password = values.password;
 
       try {
-        await authService.register( this.name, this.lastname, this.email, this.password);
+
+       await authService.register( {           
+          name: this.name,
+          email: this.email,
+          avatar: this.avatar,
+          password: this.password
+        });
+
+        await authService.getToken({ email: this.email, password: this.password })
+
         this.$router.push("/launches");
+        
       } catch (error) {
         console.log(error);
       }
@@ -142,6 +152,7 @@ export default {
       this.$router.push("/");
     },
   },
+
 };
 </script>
 
