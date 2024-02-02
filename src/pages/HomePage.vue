@@ -2,13 +2,6 @@
   <main class="container">
     <h1>LANZAMIENTOS DE SPACEX 🚀</h1>
 
-    <p>
-      Esta aplicación WEB vamos a mostrar algunos lanzamientos realizados por la
-      empresa privada norte americana SPACE X en los últimos años. Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Perspiciatis atque possimus
-      magnam, aliquid debitis ab, quod maiores non minus repudiandae cum. Atque
-      quibusdam esse, necessitatibus doloremque impedit ab quidem laudantium.
-    </p>
 
     <p>
       Puedes acceder a su web oficial para ver los próximos lanzamientos:
