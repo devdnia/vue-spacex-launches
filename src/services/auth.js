@@ -1,4 +1,5 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const API_URL = "https://api.escuelajs.co/api/v1/users/";
 const API_AUTH = "https://api.escuelajs.co/api/v1/auth/login";
@@ -35,8 +36,23 @@ export const authService = {
     console.log(token);
     await localStorage.setItem("TOKEN", JSON.stringify(token));
   },
-  logout: () => {
-    localStorage.removeItem("TOKEN");
+  logout: async () => {
+    const token = await authService.getLocalStorageToken()
+
+    if( !token){
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "No está registrado en la aplicación",
+      });
+    } else {
+      localStorage.removeItem("TOKEN");
+      Swal.fire({
+        title: "LOGOUT",
+        text: "Se ha cerrado su sesión",
+        icon: "success"
+      });
+    }
   },
   getLocalStorageToken: () => {
     const token = localStorage.getItem("TOKEN");
